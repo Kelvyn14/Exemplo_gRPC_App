@@ -18,5 +18,15 @@ namespace Grpc_App_1.Services
                 Message = "Hello " + request.Name + ", It's a beautiful day to learn gRPC!!!"
             });
         }
+        
+        public override Task<WeatherReply> SayWeather(WeatherRequest request, ServerCallContext context)
+        {
+            return Task.FromResult(new WeatherReply
+			{
+                Message = "Weather here in São Paulo is great today! =)"
+            });
+        }
+
+
     }
 }
